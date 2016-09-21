@@ -1,4 +1,6 @@
-﻿A [React](https://facebook.github.io/react/index.html)_[Sails](http://sailsjs.org) webApp  
+﻿A [React](https://facebook.github.io/react/index.html)_[Sails](http://sailsjs.org) webApp
+
+demo：http://react-sails.herokuapp.com/
 
 功能：聊天室+React Todos  
 
@@ -14,9 +16,9 @@ Sails是一款Node.js的MVC框架，可以很容易地开发定制的，企业�
 `cd ../server`  
 `npm install`  
 `npm install -g nodemon`  
-`nodemon`  
+`nodemon`
 
-打开localhost:1337，输入帐号密码，都为admin1
+open 127.0.0.1:1337
 
 ![demo1](server/assets/images/demo1.jpg)  
 
