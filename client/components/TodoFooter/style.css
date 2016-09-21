@@ -1,0 +1,37 @@
+.footer {
+    font-size: 1.2rem;
+    padding-bottom: 5rem;
+}
+
+.do {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.do button {
+    width: 5rem;
+    height: 3rem;
+    text-align: center;
+    margin-right: 1rem;
+    background-color: #333;
+    border-radius: .5rem;
+    color: #fff;
+}
+
+.oth {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkbox {
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    top: -.1rem;
+}
+
+.num {
+    flex-grow: 1;
+    margin-left: 1rem;
+}

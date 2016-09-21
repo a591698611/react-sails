@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <title>react_sails</title>
+    <link rel="stylesheet" href="/main.css">
+    <style>
+        body,p,div,a,ul,ol,li,dl,dd,dt,li,h1,h2,h3,h4,h5,h6,input,table,form,textarea,iframe,button,select,th,td,table,fieldset{margin:0;padding:0;border:0;outline:0;text-decoration:none;vertical-align:middle;list-style:none}
+        @media screen and (-webkit-device-pixel-ratio:2){}
+        @media screen and (max-width:360px){body,html{font-size:62.5%}
+        }@media screen and (min-width:300px){body,html{font-size:59%}
+        }@media screen and (min-width:360px){body,html{font-size:70.3125%}
+        }@media screen and (min-width:400px){body,html{font-size:78.125%}
+        }@media screen and (min-width:440px){body,html{font-size:85.9375%}
+        }@media screen and (min-width:480px){body,html{font-size:93.75%}
+        }@media screen and (min-width:520px){body,html{font-size:107.8125%}
+        }@media screen and (max-height:400px){footer{display:none}
+        }
+        body{background: url("images/paper.png")}
+
+        /*react动画css*/
+        .example-enter{opacity:0.01}
+        .example-enter.example-enter-active{opacity:1;transition:opacity 500ms ease-in}
+        .example-leave{opacity:1}
+        .example-leave.example-leave-active{opacity:0.01;transition:opacity 300ms ease-in}
+    </style>
+</head>
+<body>
+<div id="body"></div>
+<script type="text/javascript" src="/shared.js"></script>
+<script type="text/javascript" src="/main.js"></script>
+<script type="text/javascript" src="/js/zepto.min.js"></script>
+<script type="text/javascript" src="/js/sails.io.js"></script>
+<script type="text/javascript">
+    function getJSON(url, cb) {
+        $.getJSON(url, function (data, status) {
+            if (data.code === -1) {
+                location.href = "/";
+            } else {
+                cb(data);
+            }
+        })
+    }
+</script>
+</body>
+</html>

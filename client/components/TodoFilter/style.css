@@ -1,0 +1,21 @@
+.filter {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+li {
+    display: inline-block;
+}
+
+li:not(:first-child):before {
+    padding: 0 .6rem 0;
+    content: '/';
+}
+
+.nav {
+    color: #000;
+}
+
+.navActive {
+    color: #85bf6b;
+}

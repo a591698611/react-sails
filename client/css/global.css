@@ -1,0 +1,48 @@
+﻿.hor {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.ver {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.horver {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.twenty {
+    width: 20px;
+    height: 20px;
+}
+
+.twenty_five {
+    width: 25px;
+    height: 25px;
+}
+
+.thirty {
+    width: 30px;
+    height: 30px;
+}
+
+.forty {
+    width: 40px;
+    height: 40px;
+}
+
+.seventy {
+    width: 70px;
+    height: 70px;
+}
+
+.hundred {
+    width: 100px;
+    height: 100px;
+}

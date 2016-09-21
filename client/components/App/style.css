@@ -1,0 +1,97 @@
+.top {
+    font-size: 1.6rem;
+    color: #fff;
+    width: 100%;
+    height: 4rem;
+    line-height: 4rem;
+    background: #333;
+    padding: 0 1rem 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.svg {
+    width: 2.5rem;
+    height: 100%;
+}
+
+.person {
+    composes: svg;
+    background: url('../../img/person.svg') no-repeat center center;
+    background-size: 20px 20px;
+}
+
+.date {
+    composes: svg;
+    background: url('../../img/date.svg') no-repeat center center;
+    background-size: 20px 20px;
+}
+
+.bottom {
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    height: 4rem;
+    font-size: 1.2rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+}
+
+.bottom:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    border-top: 1px solid #ccc;
+    transform: scaleY(.5);
+    transform-origin: 0 0;
+}
+
+.bar {
+    width: 50%;
+    position: relative;
+    top: 0;
+}
+
+.bg {
+    composes: twenty hor from '../../css/global.css';
+    top: .5rem;
+}
+
+.bg1 {
+    composes: bg;
+    background: url('../../img/chat.svg') no-repeat;
+    background-size: contain;
+}
+
+.bg1_2 {
+    composes: bg;
+    background: url('../../img/chat-2.svg') no-repeat;
+    background-size: contain;
+}
+
+.bg2 {
+    composes: bg;
+    background: url('../../img/todo.svg') no-repeat;
+    background-size: contain;
+}
+
+.bg2_2 {
+    composes: bg;
+    background: url('../../img/todo-2.svg') no-repeat;
+    background-size: contain;
+}
+
+.text {
+    composes: hor from '../../css/global.css';
+    bottom: .1rem;
+    color: #666;
+}

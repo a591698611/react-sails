@@ -1,0 +1,52 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dotted #666;
+    height: 4rem;
+    overflow: hidden;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.cell:nth-child(2) {
+    margin-left: 1rem;
+    flex-grow: 1;
+    line-height: 4rem;
+}
+
+.title {
+    text-decoration: line-through;
+    color: #85bf6b;
+}
+
+.btn {
+    display: inline-block;
+    text-align: center;
+    margin: .5rem 0 0 .5rem;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    overflow: hidden;
+    background: #ccc;
+}
+
+.btnHide {
+    composes: btn;
+    display: none;
+}
+
+.input {
+    font-size: 1.6rem;
+    border: 0;
+    height: 4rem;
+    background: transparent;
+}
+
+.icon {
+    fill: #555;
+}
+
+.iconActive {
+    composes: icon;
+    fill: #85bf6b;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+    <title>react_sails</title>
+    <style>
+        body,p,div,a,ul,ol,li,dl,dd,dt,li,h1,h2,h3,h4,h5,h6,input,table,form,textarea,iframe,button,select,th,td,table,fieldset{margin:0;padding:0;border:0;outline:0;text-decoration:none;vertical-align:middle;list-style:none}
+        @media screen and (-webkit-device-pixel-ratio:2){}
+        @media screen and (max-width:360px){body,html{font-size:62.5%}
+        }@media screen and (min-width:300px){body,html{font-size:59%}
+        }@media screen and (min-width:360px){body,html{font-size:70.3125%}
+        }@media screen and (min-width:400px){body,html{font-size:78.125%}
+        }@media screen and (min-width:440px){body,html{font-size:85.9375%}
+        }@media screen and (min-width:480px){body,html{font-size:93.75%}
+        }@media screen and (min-width:520px){body,html{font-size:107.8125%}
+            #svg{width:300px;height:240px}
+        }@media screen and (max-height:400px){footer{display:none}
+        }body{background:#303747}
+        .hor{position:absolute;left:50%;transform:translate(-50%,0);-webkit-transform:translate(-50%,0)}
+        #content{width:100%}
+        header#login{position:relative;top:0;height:13rem}
+        header #svg{top:15%}
+        section{width:70%;margin:0 auto;text-align:center}
+        input{width:90%;text-align:center;height:3rem;line-height:3rem;border-radius:.5rem;font-size:1.5rem;border:0;margin-top:1.6rem}
+        input[type=text]{color:#8990a1;background:#fff}
+        input[type=password]{color:#8990a1}
+        .error{text-align:center;margin:1rem 0 -1rem;font-size:1rem;color:#f06023;display:none}
+        input[type=button]{background:linear-gradient(90deg,#2ac28f,#0f9fdc);background:-webkit-linear-gradient(left,#2ac28f,#0f9fdc);background:-moz-linear-gradient(left,#2ac28f,#0f9fdc);background:-o-linear-gradient(left,#2ac28f,#0f9fdc);background:-ms-linear-gradient(left,#2ac28f,#0f9fdc);color:#fff;font-size:1.5rem}
+        article{text-align:center;margin-top:1.6rem;font-size:1rem;color:#535d72}
+        footer{width:100%;text-align:center;position:absolute;bottom:4rem;font-size:1rem;color:#8990a1}
+    </style>
+</head>
+<body>
+<div id="content">
+    <header id="login">
+        <embed src="/images/logo.svg" id="svg" class="hor" width="150px" height="120px" type="image/svg+xml"/>
+    </header>
+    <section>
+        <div style="color:#fff;font-size: 1.5rem">账号密码都为 admin</div>
+        <form id="loginForm" onsubmit="return false;">
+            <input type="text" value="admin" placeholder="账号" id="username" name="username">
+            <input onfocus="this.type='password'" value="admin" autocomplete="off" placeholder="密码" id="password" name="password">
+            <div class="error">账号或密码不正确，请检查后重试</div>
+            <input type="button" value="登录" id="signin">
+        </form>
+    </section>
+    <article>注册或找回密码请访问官网 react_sails.com</article>
+    <footer>© 2016 react_sails 保留所有权利</footer>
+</div>
+<script src="/js/zepto.min.js"></script>
+<script>
+    Zepto(function ($) {
+
+        var inputs = $("input");
+        var signin = $('#signin');
+        inputs.bind("keydown", function (e) {
+            if (e.keyCode === 13) {
+                if ($(this).attr('name') === 'password') {
+                    signin.trigger('click');
+                }
+                for (var i = 0; i < inputs.length; i++) {
+                    if (inputs[i] == this) {
+                        while ((inputs[i]).name === (inputs[i + 1]).name) {
+                            i++;
+                        }
+                        if ((i + 1) < inputs.length) $(inputs[i + 1]).focus();
+                    }
+                }
+            }
+        });
+
+        signin.click(function () {
+            var username = $.trim($("#username").val());
+            var password = $.trim($("#password").val());
+            var $error = $(".error");
+            if (username === "" || password === "") {
+                $error.show();
+                return;
+            }
+            signin.val('登录');
+            $.get('/user/login', $('#loginForm').serialize(), function (r) {
+                if (r.code === 200) {
+                    window.location.href = r.path
+                } else {
+                    $error.show();
+                }
+            })
+        });
+
+    });
+</script>
+</body>
+</html>

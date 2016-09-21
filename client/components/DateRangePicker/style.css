@@ -1,0 +1,106 @@
+.root {
+    background-color: #272c39;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 4rem;
+    z-index: 666;
+    font-weight: bold;
+}
+
+.headline {
+    background: linear-gradient(to right, #0f9fdc, #2ac28f);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+    height: 3rem;
+    padding: 0 5%;
+}
+
+.header {
+    composes: headline;
+    font-size: 1.8rem;
+    padding: 1rem 3% .5rem;
+}
+
+.iconBtn {
+    width: 3rem;
+    height: 3rem;
+}
+
+.cancel {
+    composes: iconBtn;
+    background: url('../../img/icon-close.svg') no-repeat;
+    background-size: contain;
+}
+
+.done {
+    composes: iconBtn;
+    background: url('../../img/icon-done.svg') no-repeat;
+    background-size: contain;
+}
+
+.ranges {
+    composes: headline;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0 12% .5rem;
+}
+
+.range {
+    background: #fff;
+    color: #28aeb5;
+    padding: .5rem .6rem;
+    border-radius: .2rem;
+
+}
+
+.prevMonth {
+    width: 0;
+    height: 0;
+    border-top: .8rem solid transparent;
+    border-right: .8rem solid #fff;
+    border-bottom: .8rem solid transparent;
+}
+
+.nextMonth {
+    width: 0;
+    height: 0;
+    border-top: .8rem solid transparent;
+    border-left: .8rem solid #fff;
+    border-bottom: .8rem solid transparent;
+}
+
+.calendar {
+    background-color: #fff;
+}
+
+.dateCell {
+    background-color: #fff;
+    color: #333;
+    font-size: 1.3rem;
+    text-align: center;
+    float: left;
+    width: 14.28%;
+    line-height: 3.5rem;
+    height: 3.5rem;
+    margin: .5rem 0;
+}
+
+.dateCellInRange {
+    composes: dateCell;
+    background-color: #d9dce5;
+}
+
+.dateCellOutSet {
+    composes: dateCell;
+    color: gray;
+}
+
+.dateCellEdge {
+    composes: dateCell;
+    border-radius: .5rem;
+    background-color: #727885;
+    color: #fff;
+}
