@@ -1,5 +1,16 @@
-client/node_modules
+*.swp
+.idea/
 
-server/node_modules/
+/client/node_modules/*
+!/client/node_modules/localDb/
+/client/npm-debug.log
 
-/.idea
+/server/.tmp/
+/server/node_modules/
+/server/assets/
+!/server/assets/images/
+!/server/assets/js/
+!/server/assets/favicon.ico
+!/server/assets/robots.txt
+/server/assets/dist/
+/server/npm-debug.log
